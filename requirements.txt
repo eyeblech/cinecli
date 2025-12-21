@@ -1,0 +1,13 @@
+certifi==2025.11.12
+charset-normalizer==3.4.4
+click==8.3.1
+idna==3.11
+markdown-it-py==4.0.0
+mdurl==0.1.2
+Pygments==2.19.2
+requests==2.32.5
+rich==14.2.0
+shellingham==1.5.4
+typer==0.20.1
+typing_extensions==4.15.0
+urllib3==2.6.2

@@ -122,8 +122,7 @@ xdg-mime query default x-scheme-handler/magnet
 
 Full terminal walkthrough:
 
-![Demo Video](demo.mov)
-
+![Demo Video](https://github.com/user-attachments/assets/3e3df97f-d1e2-428f-a5a1-54cba121a2f8)
 
 ----------
 

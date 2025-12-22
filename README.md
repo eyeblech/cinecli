@@ -96,3 +96,56 @@ That means:
     
 -   CineCLI will launch it directly
     
+Example (Linux):
+
+```bash
+xdg-mime query default x-scheme-handler/magnet
+
+```
+
+----------
+
+## 🎞 Demo Video
+
+Full terminal walkthrough:
+
+![Demo Video](demo.mkv)
+
+
+----------
+
+## 🛠 Tech Stack
+
+-   **Python**
+    
+-   **Typer** — CLI framework
+    
+-   **Rich** — terminal UI
+    
+-   **Requests** — API communication
+    
+-   **YTS API** — movie data source
+    
+
+----------
+
+    
+
+----------
+
+## 📄 License
+
+MIT—see [LICENSE](LICENSE).
+
+Use it. Fork it. Improve it.
+
+----------
+
+## 🙌 Author
+
+Built by **eyeblech**  
+📧 [0x1123@proton.me](mailto:0x1123@proton.me)
+
+----------
+
+> If you enjoy terminal tools, automation, or clean UX — give it a ⭐

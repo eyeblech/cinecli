@@ -1,3 +1,7 @@
+![PyPI](https://img.shields.io/pypi/v/cinecli)
+![Python](https://img.shields.io/pypi/pyversions/cinecli)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Downloads](https://img.shields.io/pypi/dm/cinecli)
 
 # 🎬 CineCLI
 
@@ -7,6 +11,11 @@
 ![Demo](demo.gif)
 
 ---
+
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macOS%20%7C%20windows-blue)
+![CLI](https://img.shields.io/badge/interface-CLI-orange)
+![Terminal](https://img.shields.io/badge/works%20in-terminal-black)
+
 
 ## ✨ Features
 
@@ -20,6 +29,10 @@
 - 🧠 Smart defaults with full user control
 
 ---
+
+![Built with Typer](https://img.shields.io/badge/built%20with-Typer-ff69b4)
+![Built with Rich](https://img.shields.io/badge/built%20with-Rich-blueviolet)
+
 
 ## 📦 Installation
 
@@ -109,7 +122,7 @@ xdg-mime query default x-scheme-handler/magnet
 
 Full terminal walkthrough:
 
-![Demo Video](demo.mkv)
+![Demo Video](demo.mp4)
 
 
 ----------
@@ -129,9 +142,6 @@ Full terminal walkthrough:
 
 ----------
 
-    
-
-----------
 
 ## 📄 License
 
@@ -148,4 +158,9 @@ Built by **eyeblech**
 
 ----------
 
-> If you enjoy terminal tools, automation, or clean UX — give it a ⭐
+> STAR the repo if you like it! ⭐
+
+![Open Source](https://img.shields.io/badge/open--source-yes-brightgreen)
+![Maintained](https://img.shields.io/badge/maintained-yes-success)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-purple)
+

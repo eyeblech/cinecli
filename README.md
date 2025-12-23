@@ -4,7 +4,7 @@
 ![Downloads](https://img.shields.io/pypi/dm/cinecli)
 
 
-![YTS API Status](https://github.com/eyeblech/cinecli/actions/workflows/yts-api-status.yml/badge.svg)
+![YTS API Status](https://github.com/eyeblech/cinecli/actions/workflows/api-health.yml/badge.svg)
 
 # 🎬 CineCLI
 

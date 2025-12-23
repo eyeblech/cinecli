@@ -6,17 +6,15 @@
 
 ![Stars](https://img.shields.io/github/stars/eyeblech/cinecli?style=flat-square)
 
-![Views](https://komarev.com/ghpvc/?username=eyeblech&repo=cinecli&style=flat-square)
 
 ---
 
 ## 📡 YTS API Status
 
-![YTS API](https://img.shields.io/github/actions/workflow/status/eyeblech/cinecli/api-health.yml?label=YTS%20API&style=for-the-badge)
 
 <p align="center">
   <img
-    src="https://github.com/eyeblech/cinecli/actions/workflows/api-health.yml/badge.svg"
+    src="https://img.shields.io/github/actions/workflow/status/eyeblech/cinecli/api-health.yml?label=YTS%20API&style=for-the-badge"
     alt="YTS API Status"
   />
 </p>

@@ -14,14 +14,11 @@ jobs:
         run: |
           echo "Checking YTS API status..."
 
-          RESPONSE=$(curl -s https://yts.mx/api/v2/list_movies.json)
-
-          STATUS=$(echo "$RESPONSE" | jq -r '.status')
-
+          RESPONSE=$(curl -fsS https://yts.mx/api/v2/list_movies.json) || { echo "Curl failed"; exit 1; }
+          STATUS=$(echo "$RESPONSE" | jq -e -r '.status') || { echo "Invalid JSON"; echo "$RESPONSE"; exit 1; }
           if [ "$STATUS" != "ok" ]; then
             echo "❌ API status is NOT ok"
             echo "$RESPONSE"
             exit 1
           fi
-
           echo "✅ API status is OK"

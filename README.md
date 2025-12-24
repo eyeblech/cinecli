@@ -1,5 +1,6 @@
 ![PyPI](https://img.shields.io/pypi/v/cinecli)
 ![Python](https://img.shields.io/pypi/pyversions/cinecli)
+![Nix Flake](https://img.shields.io/badge/Nix-Flake-5277C3?logo=nixos&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Downloads](https://img.shields.io/pypi/dm/cinecli)
 
@@ -71,6 +72,38 @@ pip install cinecli
 Requires **Python 3.9+**
 
 ----------
+
+### ❄️ Nix / NixOS (flake support)
+
+CineCLI includes **first-class Nix flake support**, so you can run it **without installing Python or pip**.
+
+#### Run without installing (one-off)
+```bash
+nix run github:eyeblech/cinecli
+```
+
+#### Install to your profile
+```bash
+nix profile add github:eyeblech/cinecli
+```
+
+Then run:
+```bash
+cinecli
+```
+
+---
+
+### 🧪 From source (developers)
+
+```bash
+git clone https://github.com/eyeblech/cinecli.git
+cd cinecli
+pip install -e .
+```
+
+---
+
 
 ## 🚀 Usage
 

@@ -1,12 +1,14 @@
-![PyPI](https://img.shields.io/pypi/v/cinecli)
-![Python](https://img.shields.io/pypi/pyversions/cinecli)
-![Nix Flake](https://img.shields.io/badge/Nix-Flake-5277C3?logo=nixos&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Downloads](https://img.shields.io/pypi/dm/cinecli)
+<p align="center">
+  <img src="https://img.shields.io/pypi/v/cinecli?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/python-3.11%2B-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Nix-Flake-5277C3?style=for-the-badge&logo=nixos&logoColor=white" />
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" />
+  <img src="https://img.shields.io/pypi/dm/cinecli?style=for-the-badge" />
+</p>
 
-
-![Stars](https://img.shields.io/github/stars/eyeblech/cinecli?style=flat-square)
-
+<p align="center">
+  <img src="https://img.shields.io/github/stars/eyeblech/cinecli?style=for-the-badge" />
+</p>
 
 ---
 
@@ -69,7 +71,7 @@ pip install cinecli
 
 ```
 
-Requires **Python 3.9+**
+Requires **Python 3.11+**
 
 ----------
 

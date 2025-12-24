@@ -225,5 +225,6 @@ Built by **eyeblech**
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=eyeblech/cinecli&type=Date)](https://star-history.com/#eyeblech/cinecli&Date)
+[![Star History](https://api.star-history.com/svg?repos=eyeblech/cinecli&type=Date&v=1)](https://star-history.com/#eyeblech/cinecli)
+
 

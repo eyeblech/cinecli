@@ -39,6 +39,7 @@
               requests
               rich
               typer
+              transmission-rpc
             ];
 
             pyproject = true;

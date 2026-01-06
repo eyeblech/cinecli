@@ -87,6 +87,8 @@ def watch(movie_id: int):
 
 
     default_action = config.get("default_action", "magnet")
+    transmission = config.get("transmission", {})
+    open_method = "Transmission client" if transmission.get("enable", False) else "web browser"
 
     action = Prompt.ask(
         "Choose action",
@@ -100,12 +102,11 @@ def watch(movie_id: int):
             torrent["hash"],
             f"{movie['title']} {torrent['quality']}",
         )
-        open_magnet(magnet)
-        console.print("[green]🧲 Magnet link opened in your torrent client![/green]")
+        open_magnet(magnet, transmission)
+        console.print(f"[green]🧲 Magnet link opened in your {open_method}![/green]")
     else:
-        download_torrent(torrent["url"])
-        console.print("[green]⬇ Torrent file download started in browser.[/green]")
-
+        download_torrent(torrent["url"], transmission)
+        console.print(f"[green]⬇ Torrent file download started in your {open_method}.[/green]")
 # -------------------------------------------------
 # Interactive command
 # -------------------------------------------------

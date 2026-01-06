@@ -17,7 +17,8 @@ authors = [
 dependencies = [
   "typer>=0.9",
   "rich>=13.0",
-  "requests>=2.28"
+  "requests>=2.28",
+  "transmission-rpc>=7.0",
 ]
 
 keywords = [

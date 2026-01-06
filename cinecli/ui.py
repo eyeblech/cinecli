@@ -42,7 +42,7 @@ def show_movie_details(movie):
     console.print(Panel(text, title="🎬 Movie Details", expand=False))
 
 
-def show_torrents(torrents):
+def show_torrents(movie_id, torrents):
     table = Table(title="🧲 Available Torrents")
 
     table.add_column("Index", justify="center")
@@ -53,7 +53,7 @@ def show_torrents(torrents):
 
     for idx, torrent in enumerate(torrents):
         table.add_row(
-            str(idx),
+            f"{movie_id}-{idx}",
             torrent["quality"],
             torrent["size"],
             str(torrent["seeds"]),

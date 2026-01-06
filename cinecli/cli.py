@@ -13,7 +13,6 @@ from cinecli.magnets import (
     build_magnet,
     open_magnet,
     download_torrent,
-    select_best_torrent,
 )
 
 # -------------------------------------------------
@@ -36,6 +35,9 @@ def search(
     query: list[str] = typer.Argument(..., help="Movie name to search for"),
     limit: int = typer.Option(10),
 ):
+    """
+    Search for movies
+    """
     search_query = " ".join(query)
     movies = search_movies(search_query, limit)
 
@@ -51,9 +53,9 @@ def search(
 # -------------------------------------------------
 
 @app.command()
-def watch(movie_id: int):
+def info(movie_id: int):
     """
-    View movie details and open torrent (magnet or .torrent file)
+    View movie details
     """
     movie = get_movie_details(movie_id)
 
@@ -64,47 +66,38 @@ def watch(movie_id: int):
         console.print("[red]❌ No torrents available.[/red]")
         raise typer.Exit(code=1)
 
-    show_torrents(torrents)
-    auto = typer.confirm("🎯 Auto-select best torrent?", default=True)
+    show_torrents(movie_id, torrents)
 
-    if auto:
-        torrent = select_best_torrent(torrents)
-        typer.echo(
-            f"🎯 Auto-selected torrent: {torrent['quality']} ({torrent['size']})"
-        )
-    else:
-        index = typer.prompt(
-            "Select torrent index",
-            type=int
-        )
+@app.command()
+def download(torrent_id: str):
+    """
+    Open torrent (magnet or .torrent file)
+    """
+    movie_id, quality_id = map(int, torrent_id.split("-"))
 
-        if index < 0 or index >= len(torrents):
-            typer.echo("❌ Invalid torrent index")
-            raise typer.Exit(code=1)
+    movie = get_movie_details(movie_id)
+    torrents = movie.get("torrents", [])
 
-        torrent = torrents[index]
+    if quality_id < 0 or quality_id >= len(torrents):
+        typer.echo("❌ Invalid torrent index")
+        raise typer.Exit(code=1)
 
+    torrent = torrents[quality_id]
 
-
-    default_action = config.get("default_action", "magnet")
-
-    action = Prompt.ask(
-        "Choose action",
-        choices=["magnet", "torrent"],
-        default=default_action,
-    )
-
+    action = config.get("default_action", "magnet")
+    transmission = config.get("transmission", {})
+    open_method = "Transmission client" if transmission.get("enable", False) else "web browser"
 
     if action == "magnet":
         magnet = build_magnet(
             torrent["hash"],
             f"{movie['title']} {torrent['quality']}",
         )
-        open_magnet(magnet)
-        console.print("[green]🧲 Magnet link opened in your torrent client![/green]")
+        open_magnet(magnet, transmission)
+        console.print(f"[green]🧲 Magnet link opened in your {open_method}![/green]")
     else:
-        download_torrent(torrent["url"])
-        console.print("[green]⬇ Torrent file download started in browser.[/green]")
+        download_torrent(torrent["url"], transmission)
+        console.print(f"[green]⬇ Torrent file download started in your {open_method}.[/green]")
 
 # -------------------------------------------------
 # Interactive command
@@ -145,7 +138,7 @@ def interactive():
         console.print("[red]❌ No torrents available.[/red]")
         raise typer.Exit()
 
-    show_torrents(torrents)
+    show_torrents(movie_id, torrents)
 
     torrent_index = Prompt.ask(
         "Select torrent index",

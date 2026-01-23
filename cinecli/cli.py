@@ -127,7 +127,6 @@ def interactive():
         console.print(
             f"[cyan][{idx}][/cyan] "
             f"{movie['title']} ({movie['year']}) "
-            f"⭐ {movie['rating']}"
         )
 
     movie_index = Prompt.ask(

@@ -34,7 +34,6 @@ def show_movie_details(movie):
 
     text = (
         f"[bold]{movie['title']} ({movie['year']})[/bold]\n\n"
-        f"⭐ Rating: {movie['rating']}\n"
         f"⏱ Runtime: {movie['runtime']} min\n"
         f"🎭 Genres: {', '.join(movie.get('genres', []))}\n\n"
         f"{description}"

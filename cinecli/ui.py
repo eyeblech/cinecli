@@ -11,14 +11,12 @@ def show_movies(movies):
     table.add_column("ID", style="cyan", justify="right")
     table.add_column("Title", style="bold")
     table.add_column("Year", justify="center")
-    table.add_column("Rating", justify="center")
 
     for movie in movies:
         table.add_row(
             str(movie["id"]),
             movie["title"],
             str(movie["year"]),
-            str(movie["rating"]),
         )
 
     console.print(table)

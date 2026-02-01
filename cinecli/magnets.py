@@ -1,5 +1,6 @@
 import webbrowser
 import urllib.parse
+from transmission_rpc import Client
 
 TRACKERS = [
     "udp://open.demonii.com:1337/announce",
@@ -13,11 +14,17 @@ def build_magnet(hash_: str, name: str) -> str:
     dn = urllib.parse.quote(name)
     return f"magnet:?xt=urn:btih:{hash_}&dn={dn}{trackers}"
 
-def open_magnet(magnet_url: str):
-    webbrowser.open(magnet_url)
+def open_magnet(magnet_url: str, transmission: dict = {}):
+    download_torrent(magnet_url, transmission)
 
-def download_torrent(torrent_url: str):
-    webbrowser.open(torrent_url)
+def download_torrent(url: str, transmission: dict = {}):
+    if transmission.get("enable", False):
+        client_options = { k : v for k, v in transmission.items() if k != "enable" }
+        Client(**client_options).add_torrent(url)
+    else:
+        webbrowser.open(url)
+
+
 def select_best_torrent(torrents: list[dict]) -> dict:
     """
     Pick the torrent with the highest quality and seeds.

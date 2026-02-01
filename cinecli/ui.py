@@ -11,14 +11,12 @@ def show_movies(movies):
     table.add_column("ID", style="cyan", justify="right")
     table.add_column("Title", style="bold")
     table.add_column("Year", justify="center")
-    table.add_column("Rating", justify="center")
 
     for movie in movies:
         table.add_row(
             str(movie["id"]),
             movie["title"],
             str(movie["year"]),
-            str(movie["rating"]),
         )
 
     console.print(table)
@@ -34,8 +32,6 @@ def show_movie_details(movie):
 
     text = (
         f"[bold]{movie['title']} ({movie['year']})[/bold]\n\n"
-        f"⭐ Rating: {movie['rating']}\n"
-        f"⏱ Runtime: {movie['runtime']} min\n"
         f"🎭 Genres: {', '.join(movie.get('genres', []))}\n\n"
         f"{description}"
     )

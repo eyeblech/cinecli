@@ -2,7 +2,7 @@
 
 import requests
 
-BASE_URL = "https://yts.bz/api/v2"
+BASE_URL = "https://yts.gg/api/v2"
 
 def search_movies(query: str, limit: int = 10):
     params = {

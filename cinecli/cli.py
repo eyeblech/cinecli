@@ -36,6 +36,8 @@ def search(
     query: list[str] = typer.Argument(..., help="Movie name to search for"),
     limit: int = typer.Option(10),
 ):
+    if limit < 1:
+        raise typer.BadParameter("--limit must be at least 1")
     search_query = " ".join(query)
     movies = search_movies(search_query, limit)
 
